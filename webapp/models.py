@@ -49,6 +49,9 @@ class OrganisationHistory(models.Model):
 
 	organisation = models.ForeignKey(Organisation, blank = True)
 
+	def __str__(self):
+		return self.name
+
 	class Meta:
 		verbose_name_plural = "Organisation History"
 
@@ -83,6 +86,9 @@ class FacilityHistory(models.Model):
 	
 	facility = models.ForeignKey(Facility, blank = True)
 
+	def __str__(self):
+		return self.name
+
 	class Meta:
 		verbose_name_plural = "Facility History"
 
@@ -114,6 +120,9 @@ class DepartmentHistory(models.Model):
 	
 	department = models.ForeignKey(Department, blank = True)
 
+	def __str__(self):
+		return self.name
+
 	class Meta:
 		verbose_name_plural = "Department History"
 
@@ -125,22 +134,30 @@ class DepartmentHistory(models.Model):
 # WorkOrder Table
 class WorkOrder(models.Model):
 	name = models.CharField(max_length = 255)
-
-	created = models.DateTimeField(auto_now_add = True)
-	modified = models.DateTimeField(auto_now = True)
-
-	class Meta:
-		verbose_name_plural = "Work Order"
-
-# PurchaseOrder Table
-class PurchaseOrder(models.Model):
-	name = models.CharField(max_length = 255)
+	due_date = models.DateTimeField()
 
 	created = models.DateTimeField(auto_now_add = True)
 	modified = models.DateTimeField(auto_now = True)
 
 	def __str__(self):
 		return self.name
+
+	class Meta:
+		verbose_name_plural = "Work Orders"
+
+# PurchaseOrder Table
+class PurchaseOrder(models.Model):
+	name = models.CharField(max_length = 255)
+	due_date = models.DateTimeField()
+
+	created = models.DateTimeField(auto_now_add = True)
+	modified = models.DateTimeField(auto_now = True)
+
+	def __str__(self):
+		return self.name
+
+	class Meta:
+		verbose_name_plural = "Purchase Orders"
 
 # Asset Table
 class Asset(models.Model):
@@ -161,3 +178,4 @@ class Service(models.Model):
 
 	def __str__(self):
 		return self.name
+

@@ -4,16 +4,28 @@
 
 <div class="container_12">
 	<div class="grid_6 dash_panel">
-		<h3>First Title</h3>
-		<p>First Body</p>
+		<h3>Work Orders</h3>
+		
+		{% if work_orders %}
+		  	<ul>
+		    {% for work_order in work_orders %}
+		    	<li>{{ work_order.name }}</li>
+		    {% endfor %}
+		    </ul>
+		{% endif %}
+
 	</div>
 	<div class="grid_6 dash_panel">
-    	<h3>Second Title</h3>
-    	<p>Second Body</p>
-	</div>
-	<div class="grid_6 dash_panel">
-		<h3>Third Title</h3>
-    	<p>Third Body</p>
+    	<h3>Purchase Orders</h3>
+    	
+    	{% if purchase_orders %}
+		  	<ul>
+		    {% for purchase_order in purchase_orders %}
+		    	<li>{{ purchase_order.name }}</li>
+		    {% endfor %}
+		    </ul>
+		{% endif %}
+
 	</div>
 </div>
 
