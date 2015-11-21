@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container_12">
+	<div class="grid_6 dash_panel">
+		<h3>{{ contact.first_name }}</h3>
+		<div>{{ contact.last_name }}</div>
+		<div>{{ contact.home_phone }}</div>
+		<div>{{ contact.work_phone }}</div>
+		<div>{{ contact.mobile }}</div>
+		<div>{{ contact.fax }}</div>
+		<div>{{ contact.notes }}</div>
+		<div>{{ contact.address_first_line }}</div>
+		<div>{{ contact.address_second_line }}</div>
+		<div>{{ contact.suburb }}</div>
+		<div>{{ contact.state }}</div>
+		<div>{{ contact.country }}</div>
+		<div>{{ contact.post_code }}</div>
+		<div>{{ contact.created }}</div>
+		<div>{{ contact.modified }}</div>
+	</div>
+</div>
+
+{% endblock %}
